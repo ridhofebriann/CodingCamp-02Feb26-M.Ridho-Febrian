@@ -1,0 +1,334 @@
+/* --- Reset & Fonts --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(160deg, #6366f1 0%, #8b5cf6 50%, #d8b4fe 100%);
+  min-height: 100vh;
+  padding-bottom: 50px;
+  color: #333;
+}
+
+/* --- Header --- */
+header {
+  text-align: center;
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 i {
+  color: #fbbf24;
+  margin-right: 10px;
+}
+
+header p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.clock-container {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  padding: 8px 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#digital-clock {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* --- Main Container --- */
+.container {
+  width: 90%;
+  max-width: 800px; /* Lebar agar mirip gambar */
+  margin: 0 auto;
+}
+
+/* --- Card Styles (Base) --- */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 20px;
+  position: relative; /* Untuk strip warna */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* Strip Warna di Kiri (Decorations) */
+.card-strip {
+  position: absolute;
+  left: 0;
+  top: 15px;
+  bottom: 15px;
+  width: 6px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.strip-blue {
+  background-color: #6366f1;
+}
+.strip-purple {
+  background-color: #8b5cf6;
+}
+.strip-green {
+  background-color: #10b981;
+}
+
+/* --- Card 1: Input Form --- */
+.input-grid {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Flex sizing untuk kolom input */
+.input-group:nth-child(1) {
+  flex: 3;
+} /* Task name lebih lebar */
+.input-group:nth-child(2) {
+  flex: 1.5;
+} /* Tanggal */
+.input-group:nth-child(3) {
+  flex: 1.2;
+} /* Jam */
+.input-group:nth-child(4) {
+  flex: 1.5;
+} /* Tombol */
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #475569;
+}
+
+input {
+  padding: 10px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: border 0.3s;
+  color: #334155;
+}
+
+input:focus {
+  border-color: #6366f1;
+}
+
+#add-btn {
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  padding: 11px 0; /* Sesuaikan tinggi dengan input */
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 0.95rem;
+  margin-top: auto; /* Agar sejajar bawah */
+}
+
+#add-btn:hover {
+  background-color: #4f46e5;
+}
+
+.error-msg {
+  color: #ef4444;
+  font-size: 0.8rem;
+  margin-top: 10px;
+  height: 15px;
+}
+
+/* --- Card 2: Filter --- */
+.card-filter h3,
+.card-list h3 {
+  font-size: 1.1rem;
+  color: #1e293b;
+  margin-bottom: 15px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* Active State Filter (Ungu solid) */
+.filter-btn.active {
+  background-color: #7c3aed; /* Violet */
+  color: white;
+  border-color: #7c3aed;
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
+}
+
+.search-input {
+  width: 100%;
+  background-color: #f8fafc;
+}
+
+/* --- Card 3: List --- */
+.card-list {
+  min-height: 200px;
+}
+
+.todo-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #f1f5f9;
+  transition: all 0.2s;
+}
+
+.todo-item:hover {
+  border-color: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+.todo-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-text {
+  font-weight: 600;
+  color: #334155;
+  font-size: 1rem;
+}
+
+.todo-meta {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 4px;
+  display: flex;
+  gap: 10px;
+}
+
+.todo-meta i {
+  margin-right: 4px;
+}
+
+/* Actions */
+.todo-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.btn-check {
+  background: #d1fae5;
+  color: #10b981;
+}
+.btn-check:hover {
+  background: #10b981;
+  color: white;
+}
+
+.btn-delete {
+  background: #fee2e2;
+  color: #ef4444;
+}
+.btn-delete:hover {
+  background: #ef4444;
+  color: white;
+}
+
+/* Completed State */
+.todo-item.completed {
+  opacity: 0.6;
+  background: #f1f5f9;
+}
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 40px 0;
+  color: #94a3b8;
+  font-style: italic;
+  background-color: #f8fafc;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 600px) {
+  .input-grid {
+    flex-direction: column;
+  }
+  .input-group,
+  .input-group:nth-child(n) {
+    width: 100%;
+    flex: auto;
+  }
+  #add-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .filter-buttons {
+    flex-wrap: wrap;
+  }
+  .filter-btn {
+    flex: 1;
+    text-align: center;
+  }
+}
