@@ -65,9 +65,7 @@ function addTodo(event) {
   // Create Elements
   const todoDiv = document.createElement("li");
   todoDiv.classList.add("todo-item");
-  // Default status is pending (not completed)
 
-  // Format Date nicely
   const dateObj = new Date(date);
   const dateString = isNaN(dateObj)
     ? "No Date"
@@ -111,7 +109,6 @@ function handleAction(e) {
 
   if (!todoItem) return;
 
-  // Delete
   if (item.classList.contains("btn-delete") || item.closest(".btn-delete")) {
     todoItem.style.opacity = "0";
     todoItem.style.transform = "translateX(20px)";
@@ -121,10 +118,9 @@ function handleAction(e) {
     }, 300);
   }
 
-  // Check (Complete)
   if (item.classList.contains("btn-check") || item.closest(".btn-check")) {
     todoItem.classList.toggle("completed");
-    updateUI(); // Re-run filter immediately to update view
+    updateUI();
   }
 }
 
@@ -160,12 +156,11 @@ function filterTodo() {
     emptyState.style.display = "block";
     // Ubah teks empty state sesuai filter
     if (filterStatus === "completed")
-      emptyState.querySelector("p").innerText = "Belum ada tugas selesai 💤";
+      emptyState.querySelector("p").innerText = "Belum ada tugas selesai";
     else if (filterStatus === "pending")
-      emptyState.querySelector("p").innerText = "Tugas aman semua! 🎉";
+      emptyState.querySelector("p").innerText = "Tugas aman semua bisa santai!";
     else
-      emptyState.querySelector("p").innerText =
-        "Tidak ada task sesuai filter. 🎯";
+      emptyState.querySelector("p").innerText = "Tidak ada task sesuai filter.";
   } else {
     emptyState.style.display = "none";
   }

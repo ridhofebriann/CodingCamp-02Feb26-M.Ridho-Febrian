@@ -7,7 +7,7 @@
 }
 
 body {
-  background: linear-gradient(160deg, #6366f1 0%, #8b5cf6 50%, #d8b4fe 100%);
+  background: linear-gradient(160deg, #eef9fc 0%, #4eedf9 50%, #fcfcfc 100%);
   min-height: 100vh;
   padding-bottom: 50px;
   color: #333;
@@ -16,7 +16,7 @@ body {
 /* --- Header --- */
 header {
   text-align: center;
-  color: white;
+  color: rgb(0, 0, 0);
   padding-top: 40px;
   padding-bottom: 20px;
 }
@@ -84,13 +84,13 @@ header p {
 }
 
 .strip-blue {
-  background-color: #6366f1;
+  background-color: #5ccdf6;
 }
 .strip-purple {
-  background-color: #8b5cf6;
+  background-color: #5ccdf6;
 }
 .strip-green {
-  background-color: #10b981;
+  background-color: #55cbef;
 }
 
 /* --- Card 1: Input Form --- */
@@ -141,20 +141,20 @@ input:focus {
 }
 
 #add-btn {
-  background-color: #6366f1;
+  background-color: #65e2eb;
   color: white;
   border: none;
-  padding: 11px 0; /* Sesuaikan tinggi dengan input */
+  padding: 11px 0;
   border-radius: 8px;
   font-weight: 500;
   cursor: pointer;
   transition: background 0.3s;
   font-size: 0.95rem;
-  margin-top: auto; /* Agar sejajar bawah */
+  margin-top: auto;
 }
 
 #add-btn:hover {
-  background-color: #4f46e5;
+  background-color: #77e8ff;
 }
 
 .error-msg {
@@ -190,11 +190,10 @@ input:focus {
   transition: all 0.3s;
 }
 
-/* Active State Filter (Ungu solid) */
 .filter-btn.active {
-  background-color: #7c3aed; /* Violet */
+  background-color: #3acfed;
   color: white;
-  border-color: #7c3aed;
+  border-color: #3aedea;
   box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3);
 }
 
@@ -205,7 +204,7 @@ input:focus {
 
 /* --- Card 3: List --- */
 .card-list {
-  min-height: 200px;
+  min-height: 100px;
 }
 
 .todo-list {
@@ -289,7 +288,6 @@ input:focus {
   color: white;
 }
 
-/* Completed State */
 .todo-item.completed {
   opacity: 0.6;
   background: #f1f5f9;
@@ -299,7 +297,6 @@ input:focus {
   color: #94a3b8;
 }
 
-/* Empty State */
 .empty-state {
   text-align: center;
   padding: 40px 0;
@@ -310,7 +307,6 @@ input:focus {
   margin-top: 10px;
 }
 
-/* Responsif untuk HP */
 @media (max-width: 600px) {
   .input-grid {
     flex-direction: column;
